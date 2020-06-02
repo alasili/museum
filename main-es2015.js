@@ -56,6 +56,17 @@ module.exports = "<div class=\"bee-footer\">\n    <span *ngIf=\"loading\">{{site
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/index.js!./src/app/component/bee-media/bee-media.component.html":
+/*!****************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/component/bee-media/bee-media.component.html ***!
+  \****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"orh-media\">\n    <div class=\"orh-media-content1\" *ngIf=\"!autoplay\">\n        <img class=\"orh-media-cover\" [src]=\"cover\">\n    </div>\n    <div class=\"orh-media-content\" *ngIf=\"autoplay\">\n        <vg-player (onPlayerReady)=\"onPlayerReady($event)\">\n            <vg-overlay-play vgFor=\"my-video\"></vg-overlay-play>\n            <vg-buffering></vg-buffering>\n\n            <vg-controls [vgAutohide]=\"true\" [vgAutohideTime]=\"3\" class=\"orh-media-controls\" #controls>\n                <vg-time-display class=\"orh-media-time\" vgProperty=\"current\" vgFormat=\"mm:ss\"></vg-time-display>\n                <vg-scrub-bar class=\"orh-media-progress\">\n                    <vg-scrub-bar-current-time class=\"orh-media-current\" [vgSlider]=\"true\"></vg-scrub-bar-current-time>\n                    <vg-scrub-bar-buffering-time class=\"orh-media-buffering\"></vg-scrub-bar-buffering-time>\n                </vg-scrub-bar>\n\n                <div class=\"orh-media-speed\" [ngStyle]=\"{ bottom: speedBottom }\">\n                    <vg-scrub-bar class=\"orh-media-speed-progress\">\n                        <vg-scrub-bar-current-time class=\"orh-media-speed-current\" [vgSlider]=\"true\"></vg-scrub-bar-current-time>\n                        <vg-scrub-bar-buffering-time class=\"orh-media-speed-buffering\"></vg-scrub-bar-buffering-time>\n                    </vg-scrub-bar>\n                </div>\n\n                <vg-time-display class=\"orh-media-time\" vgProperty=\"total\" vgFormat=\"mm:ss\"></vg-time-display>\n                <vg-fullscreen class=\"orh-media-fullscreen\" [ngStyle]=\"{backgroundImage: backgroundImage}\"></vg-fullscreen>\n            </vg-controls>\n\n            <video #myMedia [vgMedia]=\"myMedia\"\n                   id=\"my-video\" preload=\"auto\"\n                   [poster]=\"poster\"\n                   playsinline webkit-playsinline [autoplay]=\"play\">\n                <source [src]=\"url\" type=\"video/mp4\">\n            </video>\n        </vg-player>\n    </div>\n</div>\n"
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/index.js!./src/app/component/bee-nav/bee-nav.component.html":
 /*!************************************************************************************!*\
   !*** ./node_modules/raw-loader!./src/app/component/bee-nav/bee-nav.component.html ***!
@@ -85,7 +96,7 @@ module.exports = "<bee-nav></bee-nav>\n\n<div class=\"bee-detail\">\n<!--    <di
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<bee-nav></bee-nav>\n\n<div id=\"fullpage\">\n\n    <div class=\"section\" id=\"section0\">\n        <div class=\"bee-banner\">\n            <nz-carousel nzAutoPlay>\n                <div nz-carousel-content *ngFor=\"let item of data\">\n                    <img [src]=\"host + item.pic\">\n                </div>\n            </nz-carousel>\n        </div>\n    </div>\n\n    <!-- <div class=\"section\" id=\"section1\">\n        <div class=\"company-logo\">\n            <img src=\"../../assets/image/compoy.png\">\n        </div>\n        <div class=\"company-about\" *ngIf=\"loading\" [innerHTML]=\"about.content\" [ngStyle]=\"{transform: aboutScale}\">\n        </div>\n    </div> -->\n\n    <div class=\"section\" id=\"section2\">\n        <div class=\"news\">\n            <div class=\"news-header\">\n                <span> ᠲᠠᠨᠢᠯᠴᠠᠭᠤᠯᠬᠤ ᠠᠭᠤᠯᠭ᠎ᠠ </span>\n            </div>\n            <div class=\"news-content\" [ngStyle]=\"{left: newLeft}\">\n                <div class=\"new-item\" *ngFor=\"let item of list; let i = index;\" [hidden]=\"i > 3\" (click)=\"itemClikc(item)\">\n                    <div class=\"title\"> {{ item.description }} </div>\n                    <img [src]=\"host + item.ico\">\n                </div>\n                <div class=\"new-more\" (click)=\"newsClikc()\">\n                    <span> ᠨᠡᠩ ᠤᠯᠠᠨ </span>\n                </div>\n            </div>\n        </div>\n    </div>\n\n    <div class=\"section\" id=\"section3\" [ngStyle]=\"{backgroundImage:'url('+host + collection[collectionIndex]+')'}\">\n        <div class=\"collection\" [ngStyle]=\"{transform: collectionTransform}\" >\n            <img [src]=\"host + collection[collectionIndex]\">\n\n            <div class=\"prev\" *ngIf=\"collectionIndex !== 0\" (click)=\"collectionIndex = collectionIndex - 1\"></div>\n            <div class=\"next\" *ngIf=\"collectionIndex !== collection.length - 1\" (click)=\"collectionIndex = collectionIndex + 1\"></div>\n        </div>\n    </div>\n\n    <div class=\"section\" id=\"section4\">\n        <div class=\"exhibition\" [ngStyle]=\"{transform: exhibitionTransform}\">\n            <div class=\"exhibition-header\">\n                <span> ᠽᠦᠢ ᠰᠢᠨ ᠦᠵᠡᠰᠬᠦᠯᠡᠩ </span>\n            </div>\n\n            <div class=\"exhibition-content\">\n                <div class=\"new-item\" *ngFor=\"let item of exhibition; let i = index;\" [hidden]=\"i > 4\" (click)=\"itemClikc(item)\">\n                    <div class=\"title\"> {{ item.description }} </div>\n                    <img [src]=\"host + item.ico\">\n                </div>\n\n                <div class=\"new-more\" (click)=\"exhibitionClikc()\">\n                    <span> ᠨᠡᠩ ᠤᠯᠠᠨ </span>\n                </div>\n            </div>\n        </div>\n    </div>\n\n    <div class=\"section\" id=\"section5\">\n        <div class=\"notice\" [ngStyle]=\"{right: noticeRight}\">\n            <div class=\"notice-item\">\n                <div class=\"title\">\n                    <span> ᠳᠡᠯᠭᠡᠭᠦᠷ ᠨᠡᠭᠡᠭᠡᠬᠦ ᠴᠠᠭ </span>\n                </div>\n                <div class=\"content\" *ngIf=\"timeLoading\" [innerHTML]=\"timeData.content\"></div>\n            </div>\n            <div class=\"notice-item\">\n                <div class=\"title\">\n                    <span> ᠵᠠᠮ ᠬᠠᠷᠢᠯᠴᠠᠭᠠᠨ ᠤ ᠱᠤᠭᠤᠮ</span>\n                </div>\n                <div class=\"content\" *ngIf=\"trafficLoading\" [innerHTML]=\"trafficData.content\"></div>\n            </div>\n            <div class=\"notice-item\">\n                <div class=\"title\">\n                    <span> ᠵᠤᠭᠠᠴᠠᠭᠰᠠᠳ ᠤᠨ ᠮᠡᠳᠡᠬᠦ ᠶᠣᠰᠣᠲᠠᠶ ᠵᠦᠶᠯ </span>\n                </div>\n                <div class=\"content\" *ngIf=\"noticeLoading\" [innerHTML]=\"noticeData.content\"></div>\n            </div>\n        </div>\n\n        <bee-footer></bee-footer>\n    </div>\n</div>\n"
+module.exports = "<bee-nav></bee-nav>\n\n<div id=\"fullpage\">\n\n    <div class=\"section\" id=\"section0\">\n        <div class=\"bee-banner\">\n            <nz-carousel nzAutoPlay>\n                <div nz-carousel-content *ngFor=\"let item of data\">\n                    <img [src]=\"host + item.pic\">\n                </div>\n            </nz-carousel>\n        </div>\n    </div>\n\n    <!-- <div class=\"section\" id=\"section1\">\n        <div class=\"company-logo\">\n            <img src=\"../../assets/image/compoy.png\">\n        </div>\n        <div class=\"company-about\" *ngIf=\"loading\" [innerHTML]=\"about.content\" [ngStyle]=\"{transform: aboutScale}\">\n        </div>\n    </div> -->\n\n    <div class=\"section\" id=\"section2\">\n        <div class=\"news\">\n            <div class=\"news-header\">\n                <span> ᠲᠠᠨᠢᠯᠴᠠᠭᠤᠯᠬᠤ ᠠᠭᠤᠯᠭ᠎ᠠ </span>\n            </div>\n            <div class=\"news-content\" [ngStyle]=\"{left: newLeft}\">\n                <div class=\"new-item\" *ngFor=\"let item of list; let i = index;\" [hidden]=\"i > 3\" (click)=\"itemClikc(item)\">\n                    <div class=\"title\"> {{ item.title }} </div>\n                    <img [src]=\"host + item.ico\">\n                </div>\n                <div class=\"new-more\" (click)=\"newsClikc()\">\n                    <span> ᠨᠡᠩ ᠤᠯᠠᠨ </span>\n                </div>\n            </div>\n        </div>\n    </div>\n\n    <div class=\"section\" id=\"section3\" [ngStyle]=\"{backgroundImage:'url('+host + collection[collectionIndex]+')'}\">\n        <div class=\"collection\" [ngStyle]=\"{transform: collectionTransform}\" >\n            <img [src]=\"host + collection[collectionIndex]\">\n\n            <div class=\"prev\" *ngIf=\"collectionIndex !== 0\" (click)=\"collectionIndex = collectionIndex - 1\"></div>\n            <div class=\"next\" *ngIf=\"collectionIndex !== collection.length - 1\" (click)=\"collectionIndex = collectionIndex + 1\"></div>\n        </div>\n    </div>\n\n    <div class=\"section\" id=\"section4\">\n        <div class=\"exhibition\" [ngStyle]=\"{transform: exhibitionTransform}\">\n            <div class=\"exhibition-header\">\n                <span> ᠽᠦᠢ ᠰᠢᠨ ᠦᠵᠡᠰᠬᠦᠯᠡᠩ </span>\n            </div>\n\n            <div class=\"exhibition-content\">\n                <div class=\"new-item\" *ngFor=\"let item of exhibition; let i = index;\" [hidden]=\"i > 4\" (click)=\"itemClikc(item)\">\n                    <div class=\"title\"> {{ item.description }} </div>\n                    <img [src]=\"host + item.ico\">\n                </div>\n\n                <div class=\"new-more\" (click)=\"exhibitionClikc()\">\n                    <span> ᠨᠡᠩ ᠤᠯᠠᠨ </span>\n                </div>\n            </div>\n        </div>\n    </div>\n\n    <div class=\"section\" id=\"section5\">\n        <div class=\"notice\" [ngStyle]=\"{right: noticeRight}\">\n            <div class=\"notice-item\">\n                <div class=\"title\">\n                    <span> ᠳᠡᠯᠭᠡᠭᠦᠷ ᠨᠡᠭᠡᠭᠡᠬᠦ ᠴᠠᠭ </span>\n                </div>\n                <div class=\"content\" *ngIf=\"timeLoading\" [innerHTML]=\"timeData.content\"></div>\n            </div>\n            <div class=\"notice-item\">\n                <div class=\"title\">\n                    <span> ᠵᠠᠮ ᠬᠠᠷᠢᠯᠴᠠᠭᠠᠨ ᠤ ᠱᠤᠭᠤᠮ</span>\n                </div>\n                <div class=\"content\" *ngIf=\"trafficLoading\" [innerHTML]=\"trafficData.content\"></div>\n            </div>\n            <div class=\"notice-item\">\n                <div class=\"title\">\n                    <span> ᠵᠤᠭᠠᠴᠠᠭᠰᠠᠳ ᠤᠨ ᠮᠡᠳᠡᠬᠦ ᠶᠣᠰᠣᠲᠠᠶ ᠵᠦᠶᠯ </span>\n                </div>\n                <div class=\"content\" *ngIf=\"noticeLoading\" [innerHTML]=\"noticeData.content\"></div>\n            </div>\n        </div>\n\n        <bee-footer></bee-footer>\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -97,6 +108,17 @@ module.exports = "<bee-nav></bee-nav>\n\n<div id=\"fullpage\">\n\n    <div class
 /***/ (function(module, exports) {
 
 module.exports = "<bee-nav></bee-nav>\n\n<div class=\"bee-list\">\n\n    <div class=\"bee-list-logo\" *ngIf=\"parentLoading\">\n        <img [src]=\"host + parentData.pic\">\n    </div>\n\n    <div class=\"bee-list-content\">\n        <div class=\"content2\" *ngIf=\"type === 'exhibition'\">\n            <bee-card *ngFor=\"let item of data; let i = index;\" (click)=\"itemClikc(item)\" [cover]=\"item.ico\" [title]=\"item.title\" [description]=\"item.description\"\n                      [position]=\"i % 2 === 0 ? 'left' : 'right'\" height=\"240px\"></bee-card>\n        </div>\n\n        <div class=\"content\" *ngIf=\"!type\">\n            <div class=\"list-item\" *ngFor=\"let item of data;\" (click)=\"itemClikc(item)\">\n                <bee-card [full]=\"true\" [cover]=\"item.ico\" [title]=\"item.title\"></bee-card>\n            </div>\n        </div>\n\n        <div class=\"\" *ngIf=\"loading\">\n            <nz-skeleton [nzActive]=\"true\"></nz-skeleton>\n        </div>\n\n        <div class=\"list-page\" *ngIf=\"total !== 0\">\n            <nz-pagination [nzPageIndex]=\"page\" [nzTotal]=\"total\" (nzPageIndexChange)=\"pageChange($event)\"\n                           (nzPageSizeChange)=\"limitChange($event)\" nzShowSizeChanger\n                           [nzPageSize]=\"limit\"></nz-pagination>\n        </div>\n    </div>\n</div>\n\n"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/video/video.component.html":
+/*!**********************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/video/video.component.html ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<bee-nav></bee-nav>\n\n<div class=\"bee-list\">\n\n    <div class=\"bee-list-logo\" *ngIf=\"parentLoading\">\n        <img [src]=\"host + parentData.pic\">\n    </div>\n\n    <div class=\"bee-list-content\">\n\n        <div class=\"content\">\n            <div class=\"list-item\" *ngFor=\"let item of data;\" (click)=\"itemClikc(item)\">\n                <bee-media [autoplay]=\"playSelect === item.id\" [cover]=\"host + item.ico\" [url]=\"item.enclosure\"></bee-media>\n            </div>\n        </div>\n\n        <div class=\"\" *ngIf=\"loading\">\n            <nz-skeleton [nzActive]=\"true\"></nz-skeleton>\n        </div>\n\n\n        <div class=\"list-page\" *ngIf=\"total !== 0\">\n            <nz-pagination [nzPageIndex]=\"page\" [nzTotal]=\"total\" (nzPageIndexChange)=\"pageChange($event)\"\n                           (nzPageSizeChange)=\"limitChange($event)\" nzShowSizeChanger\n                           [nzPageSize]=\"limit\"></nz-pagination>\n        </div>\n    </div>\n</div>\n\n"
 
 /***/ }),
 
@@ -116,6 +138,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _list_list_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./list/list.component */ "./src/app/list/list.component.ts");
 /* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
 /* harmony import */ var _detail_detail_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./detail/detail.component */ "./src/app/detail/detail.component.ts");
+/* harmony import */ var _video_video_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./video/video.component */ "./src/app/video/video.component.ts");
+
 
 
 
@@ -134,6 +158,10 @@ const routes = [
     {
         path: 'list',
         component: _list_list_component__WEBPACK_IMPORTED_MODULE_3__["ListComponent"]
+    },
+    {
+        path: 'video',
+        component: _video_video_component__WEBPACK_IMPORTED_MODULE_6__["VideoComponent"]
     },
     {
         path: 'detail',
@@ -229,6 +257,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
 /* harmony import */ var _detail_detail_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./detail/detail.component */ "./src/app/detail/detail.component.ts");
 /* harmony import */ var _directive_image_url_directive__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./directive/image-url.directive */ "./src/app/directive/image-url.directive.ts");
+/* harmony import */ var _video_video_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./video/video.component */ "./src/app/video/video.component.ts");
+
 
 
 
@@ -256,7 +286,8 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _list_list_component__WEBPACK_IMPORTED_MODULE_13__["ListComponent"],
             _home_home_component__WEBPACK_IMPORTED_MODULE_14__["HomeComponent"],
             _detail_detail_component__WEBPACK_IMPORTED_MODULE_15__["DetailComponent"],
-            _directive_image_url_directive__WEBPACK_IMPORTED_MODULE_16__["ImageUrlDirective"]
+            _directive_image_url_directive__WEBPACK_IMPORTED_MODULE_16__["ImageUrlDirective"],
+            _video_video_component__WEBPACK_IMPORTED_MODULE_17__["VideoComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -411,6 +442,102 @@ BeeFooterComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
+/***/ "./src/app/component/bee-media/bee-media.component.scss":
+/*!**************************************************************!*\
+  !*** ./src/app/component/bee-media/bee-media.component.scss ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "video {\n  width: 100%;\n  height: auto;\n  -o-object-fit: contain;\n     object-fit: contain;\n}\n\n.orh-media {\n  width: 100%;\n  padding-top: calc(100% * 0.5625);\n  position: relative;\n}\n\n.orh-media-content {\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n}\n\n.orh-media-content1 {\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n\n.orh-media-cover {\n  display: flex;\n  min-width: 100%;\n  height: 100%;\n}\n\n.orh-media-speed {\n  width: 100%;\n  height: 4px;\n  position: absolute;\n  bottom: -50px;\n  display: flex;\n  transition: bottom 0.8s;\n}\n\n.orh-media-speed-progress {\n  height: 4px !important;\n  margin: 0 !important;\n}\n\n.orh-media-speed-current {\n  top: calc(50% - 2px) !important;\n  height: 4px !important;\n  border-radius: 0 !important;\n  background-color: rgba(255, 255, 255, 0.35) !important;\n}\n\n.orh-media-speed-buffering {\n  top: calc(50% - 2px) !important;\n  height: 4px !important;\n}\n\n.orh-media-controls {\n  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, black 100%) !important;\n}\n\n.orh-media-time {\n  color: #c28d3d !important;\n}\n\n.orh-media-current {\n  top: calc(50% - 2px) !important;\n  height: 4px !important;\n  background-color: rgba(255, 255, 255, 0.35) !important;\n}\n\n.orh-media-buffering {\n  top: calc(50% - 2px) !important;\n  height: 4px !important;\n}\n\n.orh-media-fullscreen {\n  background-repeat: no-repeat;\n  background-position: 50%;\n  background-size: 20px 20px;\n}\n\n:host ::ng-deep .orh-media-progress .slider {\n  z-index: 2;\n  width: 10px !important;\n  height: 10px !important;\n  margin-top: -3px !important;\n  margin-left: -5px !important;\n  background-color: #c28d3d !important;\n}\n\n:host ::ng-deep .orh-media-buffering .background {\n  background-color: #DBDBDB !important;\n}\n\n:host ::ng-deep .orh-media-current .background {\n  z-index: 2;\n  top: calc(50% - 2px) !important;\n  height: 4px !important;\n  border: none !important;\n  background-color: #c28d3d !important;\n}\n\n:host ::ng-deep .orh-media-speed-progress .slider {\n  z-index: 2;\n  display: none !important;\n}\n\n:host ::ng-deep .orh-media-speed-buffering .background {\n  background-color: #DBDBDB !important;\n  border-radius: 0 !important;\n}\n\n:host ::ng-deep .orh-media-speed-current .background {\n  z-index: 2;\n  top: calc(50% - 2px) !important;\n  height: 4px !important;\n  border: none !important;\n  border-radius: 0 !important;\n  background-color: #c28d3d !important;\n}\n\n:host ::ng-deep .vg-icon-play_arrow {\n  background-image: url('icon-play.svg');\n  background-repeat: no-repeat;\n  background-position: 50%;\n  background-size: 40px 40px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50L2JlZS1tZWRpYS9EOlxccHJvamVjdFxcbXkgcHJvamVjdFxcYW5ndWxhciBwYyBwcm9qZWN0XFxtdXNldW0vc3JjXFxhcHBcXGNvbXBvbmVudFxcYmVlLW1lZGlhXFxiZWUtbWVkaWEuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2NvbXBvbmVudC9iZWUtbWVkaWEvYmVlLW1lZGlhLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksV0FBQTtFQUNBLFlBQUE7RUFDQSxzQkFBQTtLQUFBLG1CQUFBO0FDQ0o7O0FERUE7RUFDSSxXQUFBO0VBQ0EsZ0NBQUE7RUFDQSxrQkFBQTtBQ0NKOztBRENJO0VBQ0ksa0JBQUE7RUFDQSxPQUFBO0VBQVMsUUFBQTtFQUFVLE1BQUE7RUFBUSxTQUFBO0FDSW5DOztBRERJO0VBQ0ksa0JBQUE7RUFDQSxPQUFBO0VBQVMsUUFBQTtFQUFVLE1BQUE7RUFBUSxTQUFBO0VBQzNCLGFBQUE7RUFDQSxtQkFBQTtFQUNBLHVCQUFBO0FDTVI7O0FESEk7RUFDSSxhQUFBO0VBQ0EsZUFBQTtFQUNBLFlBQUE7QUNLUjs7QURGSTtFQUNJLFdBQUE7RUFDQSxXQUFBO0VBQ0Esa0JBQUE7RUFDQSxhQUFBO0VBQ0EsYUFBQTtFQUNBLHVCQUFBO0FDSVI7O0FERlE7RUFDSSxzQkFBQTtFQUNBLG9CQUFBO0FDSVo7O0FERFE7RUFDSSwrQkFBQTtFQUNBLHNCQUFBO0VBQ0EsMkJBQUE7RUFDQSxzREFBQTtBQ0daOztBREFRO0VBQ0ksK0JBQUE7RUFDQSxzQkFBQTtBQ0VaOztBREVJO0VBQ0ksK0VBQUE7QUNBUjs7QURHSTtFQUNJLHlCQUFBO0FDRFI7O0FESUk7RUFDSSwrQkFBQTtFQUNBLHNCQUFBO0VBQ0Esc0RBQUE7QUNGUjs7QURLSTtFQUNJLCtCQUFBO0VBQ0Esc0JBQUE7QUNIUjs7QURNSTtFQUVJLDRCQUFBO0VBQ0Esd0JBQUE7RUFDQSwwQkFBQTtBQ0xSOztBRFNBO0VBQ0ksVUFBQTtFQUNBLHNCQUFBO0VBQ0EsdUJBQUE7RUFDQSwyQkFBQTtFQUNBLDRCQUFBO0VBQ0Esb0NBQUE7QUNOSjs7QURTQTtFQUNJLG9DQUFBO0FDTko7O0FEU0E7RUFDSSxVQUFBO0VBQ0EsK0JBQUE7RUFDQSxzQkFBQTtFQUNBLHVCQUFBO0VBQ0Esb0NBQUE7QUNOSjs7QURTQTtFQUNJLFVBQUE7RUFDQSx3QkFBQTtBQ05KOztBRFNBO0VBQ0ksb0NBQUE7RUFDQSwyQkFBQTtBQ05KOztBRFNBO0VBQ0ksVUFBQTtFQUNBLCtCQUFBO0VBQ0Esc0JBQUE7RUFDQSx1QkFBQTtFQUNBLDJCQUFBO0VBQ0Esb0NBQUE7QUNOSjs7QURTQTtFQUNJLHNDQUFBO0VBQ0EsNEJBQUE7RUFDQSx3QkFBQTtFQUNBLDBCQUFBO0FDTkoiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnQvYmVlLW1lZGlhL2JlZS1tZWRpYS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbInZpZGVvIHtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgaGVpZ2h0OiBhdXRvO1xyXG4gICAgb2JqZWN0LWZpdDogY29udGFpbjtcclxufVxyXG5cclxuLm9yaC1tZWRpYSB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIHBhZGRpbmctdG9wOiBjYWxjKDEwMCUgKiAwLjU2MjUpO1xyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG5cclxuICAgICYtY29udGVudCB7XHJcbiAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgICAgIGxlZnQ6IDA7IHJpZ2h0OiAwOyB0b3A6IDA7IGJvdHRvbTogMDtcclxuICAgIH1cclxuXHJcbiAgICAmLWNvbnRlbnQxIHtcclxuICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICAgICAgbGVmdDogMDsgcmlnaHQ6IDA7IHRvcDogMDsgYm90dG9tOiAwO1xyXG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICAgIH1cclxuXHJcbiAgICAmLWNvdmVyIHtcclxuICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgIG1pbi13aWR0aDogMTAwJTtcclxuICAgICAgICBoZWlnaHQ6IDEwMCU7XHJcbiAgICB9XHJcblxyXG4gICAgJi1zcGVlZCB7XHJcbiAgICAgICAgd2lkdGg6IDEwMCU7XHJcbiAgICAgICAgaGVpZ2h0OiA0cHg7XHJcbiAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgICAgIGJvdHRvbTogLTUwcHg7XHJcbiAgICAgICAgZGlzcGxheTogZmxleDtcclxuICAgICAgICB0cmFuc2l0aW9uOiBib3R0b20gLjhzO1xyXG5cclxuICAgICAgICAmLXByb2dyZXNzIHtcclxuICAgICAgICAgICAgaGVpZ2h0OiA0cHggIWltcG9ydGFudDtcclxuICAgICAgICAgICAgbWFyZ2luOiAwICFpbXBvcnRhbnQ7XHJcbiAgICAgICAgfVxyXG5cclxuICAgICAgICAmLWN1cnJlbnQge1xyXG4gICAgICAgICAgICB0b3A6IGNhbGMoNTAlIC0gMnB4KSAhaW1wb3J0YW50O1xyXG4gICAgICAgICAgICBoZWlnaHQ6IDRweCAhaW1wb3J0YW50O1xyXG4gICAgICAgICAgICBib3JkZXItcmFkaXVzOiAwICFpbXBvcnRhbnQ7XHJcbiAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6IHJnYmEoMjU1LCAyNTUsIDI1NSwgMC4zNSkgIWltcG9ydGFudDtcclxuICAgICAgICB9XHJcblxyXG4gICAgICAgICYtYnVmZmVyaW5nIHtcclxuICAgICAgICAgICAgdG9wOiBjYWxjKDUwJSAtIDJweCkgIWltcG9ydGFudDtcclxuICAgICAgICAgICAgaGVpZ2h0OiA0cHggIWltcG9ydGFudDtcclxuICAgICAgICB9XHJcbiAgICB9XHJcblxyXG4gICAgJi1jb250cm9scyB7XHJcbiAgICAgICAgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDE4MGRlZywgcmdiYSgwLCAwLCAwLCAwKSAwJSwgcmdiYSgwLCAwLCAwLCAxKSAxMDAlKSAhaW1wb3J0YW50O1xyXG4gICAgfVxyXG5cclxuICAgICYtdGltZSB7XHJcbiAgICAgICAgY29sb3I6ICNjMjhkM2QgIWltcG9ydGFudDtcclxuICAgIH1cclxuXHJcbiAgICAmLWN1cnJlbnQge1xyXG4gICAgICAgIHRvcDogY2FsYyg1MCUgLSAycHgpICFpbXBvcnRhbnQ7XHJcbiAgICAgICAgaGVpZ2h0OiA0cHggIWltcG9ydGFudDtcclxuICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDI1NSwgMjU1LCAyNTUsIDAuMzUpICFpbXBvcnRhbnQ7XHJcbiAgICB9XHJcblxyXG4gICAgJi1idWZmZXJpbmcge1xyXG4gICAgICAgIHRvcDogY2FsYyg1MCUgLSAycHgpICFpbXBvcnRhbnQ7XHJcbiAgICAgICAgaGVpZ2h0OiA0cHggIWltcG9ydGFudDtcclxuICAgIH1cclxuXHJcbiAgICAmLWZ1bGxzY3JlZW4ge1xyXG4gICAgICAgIC8vYmFja2dyb3VuZC1pbWFnZTogdXJsKFwiLi4vLi4vLi4vYXNzZXRzL21lZGlhL2ljb24tZnVsbC5zdmdcIik7XHJcbiAgICAgICAgYmFja2dyb3VuZC1yZXBlYXQ6IG5vLXJlcGVhdDtcclxuICAgICAgICBiYWNrZ3JvdW5kLXBvc2l0aW9uOiA1MCU7XHJcbiAgICAgICAgYmFja2dyb3VuZC1zaXplOiAyMHB4IDIwcHg7XHJcbiAgICB9XHJcbn1cclxuXHJcbjpob3N0IDo6bmctZGVlcCAub3JoLW1lZGlhLXByb2dyZXNzIC5zbGlkZXIge1xyXG4gICAgei1pbmRleDogMjtcclxuICAgIHdpZHRoOiAxMHB4ICFpbXBvcnRhbnQ7XHJcbiAgICBoZWlnaHQ6IDEwcHggIWltcG9ydGFudDtcclxuICAgIG1hcmdpbi10b3A6IC0zcHggIWltcG9ydGFudDtcclxuICAgIG1hcmdpbi1sZWZ0OiAtNXB4ICFpbXBvcnRhbnQ7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjYzI4ZDNkICFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbjpob3N0IDo6bmctZGVlcCAub3JoLW1lZGlhLWJ1ZmZlcmluZyAuYmFja2dyb3VuZCB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjREJEQkRCICFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbjpob3N0IDo6bmctZGVlcCAub3JoLW1lZGlhLWN1cnJlbnQgLmJhY2tncm91bmQge1xyXG4gICAgei1pbmRleDogMjtcclxuICAgIHRvcDogY2FsYyg1MCUgLSAycHgpICFpbXBvcnRhbnQ7XHJcbiAgICBoZWlnaHQ6IDRweCAhaW1wb3J0YW50O1xyXG4gICAgYm9yZGVyOiBub25lICFpbXBvcnRhbnQ7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjYzI4ZDNkICFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbjpob3N0IDo6bmctZGVlcCAub3JoLW1lZGlhLXNwZWVkLXByb2dyZXNzIC5zbGlkZXIge1xyXG4gICAgei1pbmRleDogMjtcclxuICAgIGRpc3BsYXk6IG5vbmUgIWltcG9ydGFudDtcclxufVxyXG5cclxuOmhvc3QgOjpuZy1kZWVwIC5vcmgtbWVkaWEtc3BlZWQtYnVmZmVyaW5nIC5iYWNrZ3JvdW5kIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNEQkRCREIgIWltcG9ydGFudDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDAgIWltcG9ydGFudDtcclxufVxyXG5cclxuOmhvc3QgOjpuZy1kZWVwIC5vcmgtbWVkaWEtc3BlZWQtY3VycmVudCAuYmFja2dyb3VuZCB7XHJcbiAgICB6LWluZGV4OiAyO1xyXG4gICAgdG9wOiBjYWxjKDUwJSAtIDJweCkgIWltcG9ydGFudDtcclxuICAgIGhlaWdodDogNHB4ICFpbXBvcnRhbnQ7XHJcbiAgICBib3JkZXI6IG5vbmUgIWltcG9ydGFudDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDAgIWltcG9ydGFudDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNjMjhkM2QgIWltcG9ydGFudDtcclxufVxyXG5cclxuOmhvc3QgOjpuZy1kZWVwIC52Zy1pY29uLXBsYXlfYXJyb3cge1xyXG4gICAgYmFja2dyb3VuZC1pbWFnZTogdXJsKFwiLi4vLi4vLi4vYXNzZXRzL21lZGlhL2ljb24tcGxheS5zdmdcIik7XHJcbiAgICBiYWNrZ3JvdW5kLXJlcGVhdDogbm8tcmVwZWF0O1xyXG4gICAgYmFja2dyb3VuZC1wb3NpdGlvbjogNTAlO1xyXG4gICAgYmFja2dyb3VuZC1zaXplOiA0MHB4IDQwcHg7XHJcbn1cclxuIiwidmlkZW8ge1xuICB3aWR0aDogMTAwJTtcbiAgaGVpZ2h0OiBhdXRvO1xuICBvYmplY3QtZml0OiBjb250YWluO1xufVxuXG4ub3JoLW1lZGlhIHtcbiAgd2lkdGg6IDEwMCU7XG4gIHBhZGRpbmctdG9wOiBjYWxjKDEwMCUgKiAwLjU2MjUpO1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG59XG4ub3JoLW1lZGlhLWNvbnRlbnQge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIGxlZnQ6IDA7XG4gIHJpZ2h0OiAwO1xuICB0b3A6IDA7XG4gIGJvdHRvbTogMDtcbn1cbi5vcmgtbWVkaWEtY29udGVudDEge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIGxlZnQ6IDA7XG4gIHJpZ2h0OiAwO1xuICB0b3A6IDA7XG4gIGJvdHRvbTogMDtcbiAgZGlzcGxheTogZmxleDtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG59XG4ub3JoLW1lZGlhLWNvdmVyIHtcbiAgZGlzcGxheTogZmxleDtcbiAgbWluLXdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IDEwMCU7XG59XG4ub3JoLW1lZGlhLXNwZWVkIHtcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogNHB4O1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIGJvdHRvbTogLTUwcHg7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIHRyYW5zaXRpb246IGJvdHRvbSAwLjhzO1xufVxuLm9yaC1tZWRpYS1zcGVlZC1wcm9ncmVzcyB7XG4gIGhlaWdodDogNHB4ICFpbXBvcnRhbnQ7XG4gIG1hcmdpbjogMCAhaW1wb3J0YW50O1xufVxuLm9yaC1tZWRpYS1zcGVlZC1jdXJyZW50IHtcbiAgdG9wOiBjYWxjKDUwJSAtIDJweCkgIWltcG9ydGFudDtcbiAgaGVpZ2h0OiA0cHggIWltcG9ydGFudDtcbiAgYm9yZGVyLXJhZGl1czogMCAhaW1wb3J0YW50O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDI1NSwgMjU1LCAyNTUsIDAuMzUpICFpbXBvcnRhbnQ7XG59XG4ub3JoLW1lZGlhLXNwZWVkLWJ1ZmZlcmluZyB7XG4gIHRvcDogY2FsYyg1MCUgLSAycHgpICFpbXBvcnRhbnQ7XG4gIGhlaWdodDogNHB4ICFpbXBvcnRhbnQ7XG59XG4ub3JoLW1lZGlhLWNvbnRyb2xzIHtcbiAgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDE4MGRlZywgcmdiYSgwLCAwLCAwLCAwKSAwJSwgYmxhY2sgMTAwJSkgIWltcG9ydGFudDtcbn1cbi5vcmgtbWVkaWEtdGltZSB7XG4gIGNvbG9yOiAjYzI4ZDNkICFpbXBvcnRhbnQ7XG59XG4ub3JoLW1lZGlhLWN1cnJlbnQge1xuICB0b3A6IGNhbGMoNTAlIC0gMnB4KSAhaW1wb3J0YW50O1xuICBoZWlnaHQ6IDRweCAhaW1wb3J0YW50O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDI1NSwgMjU1LCAyNTUsIDAuMzUpICFpbXBvcnRhbnQ7XG59XG4ub3JoLW1lZGlhLWJ1ZmZlcmluZyB7XG4gIHRvcDogY2FsYyg1MCUgLSAycHgpICFpbXBvcnRhbnQ7XG4gIGhlaWdodDogNHB4ICFpbXBvcnRhbnQ7XG59XG4ub3JoLW1lZGlhLWZ1bGxzY3JlZW4ge1xuICBiYWNrZ3JvdW5kLXJlcGVhdDogbm8tcmVwZWF0O1xuICBiYWNrZ3JvdW5kLXBvc2l0aW9uOiA1MCU7XG4gIGJhY2tncm91bmQtc2l6ZTogMjBweCAyMHB4O1xufVxuXG46aG9zdCA6Om5nLWRlZXAgLm9yaC1tZWRpYS1wcm9ncmVzcyAuc2xpZGVyIHtcbiAgei1pbmRleDogMjtcbiAgd2lkdGg6IDEwcHggIWltcG9ydGFudDtcbiAgaGVpZ2h0OiAxMHB4ICFpbXBvcnRhbnQ7XG4gIG1hcmdpbi10b3A6IC0zcHggIWltcG9ydGFudDtcbiAgbWFyZ2luLWxlZnQ6IC01cHggIWltcG9ydGFudDtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2MyOGQzZCAhaW1wb3J0YW50O1xufVxuXG46aG9zdCA6Om5nLWRlZXAgLm9yaC1tZWRpYS1idWZmZXJpbmcgLmJhY2tncm91bmQge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjREJEQkRCICFpbXBvcnRhbnQ7XG59XG5cbjpob3N0IDo6bmctZGVlcCAub3JoLW1lZGlhLWN1cnJlbnQgLmJhY2tncm91bmQge1xuICB6LWluZGV4OiAyO1xuICB0b3A6IGNhbGMoNTAlIC0gMnB4KSAhaW1wb3J0YW50O1xuICBoZWlnaHQ6IDRweCAhaW1wb3J0YW50O1xuICBib3JkZXI6IG5vbmUgIWltcG9ydGFudDtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2MyOGQzZCAhaW1wb3J0YW50O1xufVxuXG46aG9zdCA6Om5nLWRlZXAgLm9yaC1tZWRpYS1zcGVlZC1wcm9ncmVzcyAuc2xpZGVyIHtcbiAgei1pbmRleDogMjtcbiAgZGlzcGxheTogbm9uZSAhaW1wb3J0YW50O1xufVxuXG46aG9zdCA6Om5nLWRlZXAgLm9yaC1tZWRpYS1zcGVlZC1idWZmZXJpbmcgLmJhY2tncm91bmQge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjREJEQkRCICFpbXBvcnRhbnQ7XG4gIGJvcmRlci1yYWRpdXM6IDAgIWltcG9ydGFudDtcbn1cblxuOmhvc3QgOjpuZy1kZWVwIC5vcmgtbWVkaWEtc3BlZWQtY3VycmVudCAuYmFja2dyb3VuZCB7XG4gIHotaW5kZXg6IDI7XG4gIHRvcDogY2FsYyg1MCUgLSAycHgpICFpbXBvcnRhbnQ7XG4gIGhlaWdodDogNHB4ICFpbXBvcnRhbnQ7XG4gIGJvcmRlcjogbm9uZSAhaW1wb3J0YW50O1xuICBib3JkZXItcmFkaXVzOiAwICFpbXBvcnRhbnQ7XG4gIGJhY2tncm91bmQtY29sb3I6ICNjMjhkM2QgIWltcG9ydGFudDtcbn1cblxuOmhvc3QgOjpuZy1kZWVwIC52Zy1pY29uLXBsYXlfYXJyb3cge1xuICBiYWNrZ3JvdW5kLWltYWdlOiB1cmwoXCIuLi8uLi8uLi9hc3NldHMvbWVkaWEvaWNvbi1wbGF5LnN2Z1wiKTtcbiAgYmFja2dyb3VuZC1yZXBlYXQ6IG5vLXJlcGVhdDtcbiAgYmFja2dyb3VuZC1wb3NpdGlvbjogNTAlO1xuICBiYWNrZ3JvdW5kLXNpemU6IDQwcHggNDBweDtcbn0iXX0= */"
+
+/***/ }),
+
+/***/ "./src/app/component/bee-media/bee-media.component.ts":
+/*!************************************************************!*\
+  !*** ./src/app/component/bee-media/bee-media.component.ts ***!
+  \************************************************************/
+/*! exports provided: BeeMediaComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BeeMediaComponent", function() { return BeeMediaComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let BeeMediaComponent = class BeeMediaComponent {
+    constructor() {
+        this.autoplay = false;
+        this.onPlayer = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.play = false;
+        this.fullStatus = false;
+        this.speedBottom = '-50px';
+        this.backgroundImage = `url("../../../assets/media/icon-full.svg")`;
+        this.poster = '../../../assets/icon/logo.svg';
+    }
+    ngOnInit() {
+    }
+    onPlayerReady(api) {
+        this.onPlayer.emit(api);
+        api.fsAPI.onChangeFullscreen.subscribe(res => {
+            if (res) {
+                if (res !== this.fullStatus) {
+                    this.fullStatus = res;
+                }
+            }
+            else {
+                if (res !== this.fullStatus) {
+                    this.fullStatus = res;
+                }
+            }
+        });
+        api.subscriptions.ended.subscribe(res => {
+            this.speedBottom = '-50px';
+        });
+        api.subscriptions.timeUpdate.subscribe(res => {
+            if (this.controls.hideControls) {
+                this.speedBottom = '50px';
+            }
+            else {
+                this.speedBottom = '-50px';
+            }
+        });
+    }
+    ngOnChanges(changes) {
+        if (changes.autoplay) {
+            this.play = true;
+        }
+    }
+};
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('controls', { static: false })
+], BeeMediaComponent.prototype, "controls", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], BeeMediaComponent.prototype, "url", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], BeeMediaComponent.prototype, "cover", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], BeeMediaComponent.prototype, "autoplay", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()
+], BeeMediaComponent.prototype, "onPlayer", void 0);
+BeeMediaComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'bee-media',
+        template: __webpack_require__(/*! raw-loader!./bee-media.component.html */ "./node_modules/raw-loader/index.js!./src/app/component/bee-media/bee-media.component.html"),
+        styles: [__webpack_require__(/*! ./bee-media.component.scss */ "./src/app/component/bee-media/bee-media.component.scss")]
+    })
+], BeeMediaComponent);
+
+
+
+/***/ }),
+
 /***/ "./src/app/component/bee-nav/bee-nav.component.scss":
 /*!**********************************************************!*\
   !*** ./src/app/component/bee-nav/bee-nav.component.scss ***!
@@ -468,16 +595,51 @@ let BeeNavComponent = class BeeNavComponent {
         this.router.navigate(['/home']);
     }
     navChange(parent, event) {
+        console.log(event, 'nav.sss');
+        switch (event.mcode) {
+            case '1':
+                break;
+            case '2':
+                this.handleNav2(parent, event);
+                break;
+            case '3':
+                break;
+            case '4':
+                this.handleNav1(parent, event);
+                break;
+            case '5':
+                break;
+        }
+    }
+    handleNav1(parent, event) {
+        if (event.outlink) {
+            window.open(event.outlink);
+        }
+        else {
+            this.router.navigate(['/video'], {
+                queryParams: {
+                    pid: parent.scode,
+                    id: event.scode
+                }
+            });
+        }
+    }
+    handleNav2(parent, event) {
         const bool = event.filename.includes('exhibition');
         const detail = event.filename.includes('nodetail');
-        this.router.navigate(['/list'], {
-            queryParams: {
-                pid: parent.scode,
-                id: event.scode,
-                type: bool ? 'exhibition' : '',
-                detail: detail ? 'nodetail' : ''
-            }
-        });
+        if (event.outlink) {
+            window.open(event.outlink);
+        }
+        else {
+            this.router.navigate(['/list'], {
+                queryParams: {
+                    pid: parent.scode,
+                    id: event.scode,
+                    type: bool ? 'exhibition' : '',
+                    detail: detail ? 'nodetail' : ''
+                }
+            });
+        }
     }
     logoClikc() {
         this.router.navigate(['/home']);
@@ -513,11 +675,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
-/* harmony import */ var _bee_nav_bee_nav_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./bee-nav/bee-nav.component */ "./src/app/component/bee-nav/bee-nav.component.ts");
-/* harmony import */ var _bee_footer_bee_footer_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./bee-footer/bee-footer.component */ "./src/app/component/bee-footer/bee-footer.component.ts");
-/* harmony import */ var ng_zorro_antd__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ng-zorro-antd */ "./node_modules/ng-zorro-antd/fesm2015/ng-zorro-antd.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
-/* harmony import */ var _bee_card_bee_card_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./bee-card/bee-card.component */ "./src/app/component/bee-card/bee-card.component.ts");
+/* harmony import */ var videogular2_compiled_src_overlay_play_overlay_play__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! videogular2/compiled/src/overlay-play/overlay-play */ "./node_modules/videogular2/compiled/src/overlay-play/overlay-play.js");
+/* harmony import */ var videogular2_compiled_src_overlay_play_overlay_play__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(videogular2_compiled_src_overlay_play_overlay_play__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var videogular2_compiled_src_core_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! videogular2/compiled/src/core/core */ "./node_modules/videogular2/compiled/src/core/core.js");
+/* harmony import */ var videogular2_compiled_src_core_core__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(videogular2_compiled_src_core_core__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var videogular2_compiled_src_controls_controls__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! videogular2/compiled/src/controls/controls */ "./node_modules/videogular2/compiled/src/controls/controls.js");
+/* harmony import */ var videogular2_compiled_src_controls_controls__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(videogular2_compiled_src_controls_controls__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var videogular2_compiled_src_buffering_buffering__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! videogular2/compiled/src/buffering/buffering */ "./node_modules/videogular2/compiled/src/buffering/buffering.js");
+/* harmony import */ var videogular2_compiled_src_buffering_buffering__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(videogular2_compiled_src_buffering_buffering__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var videogular2_compiled_src_streaming_streaming__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! videogular2/compiled/src/streaming/streaming */ "./node_modules/videogular2/compiled/src/streaming/streaming.js");
+/* harmony import */ var videogular2_compiled_src_streaming_streaming__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(videogular2_compiled_src_streaming_streaming__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _bee_nav_bee_nav_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./bee-nav/bee-nav.component */ "./src/app/component/bee-nav/bee-nav.component.ts");
+/* harmony import */ var _bee_footer_bee_footer_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./bee-footer/bee-footer.component */ "./src/app/component/bee-footer/bee-footer.component.ts");
+/* harmony import */ var ng_zorro_antd__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ng-zorro-antd */ "./node_modules/ng-zorro-antd/fesm2015/ng-zorro-antd.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _bee_card_bee_card_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./bee-card/bee-card.component */ "./src/app/component/bee-card/bee-card.component.ts");
+/* harmony import */ var _bee_media_bee_media_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./bee-media/bee-media.component */ "./src/app/component/bee-media/bee-media.component.ts");
+
+
+
+
+
+
 
 
 
@@ -531,19 +710,26 @@ let ComponentModule = class ComponentModule {
 ComponentModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
         declarations: [
-            _bee_nav_bee_nav_component__WEBPACK_IMPORTED_MODULE_3__["BeeNavComponent"],
-            _bee_footer_bee_footer_component__WEBPACK_IMPORTED_MODULE_4__["BeeFooterComponent"],
-            _bee_card_bee_card_component__WEBPACK_IMPORTED_MODULE_7__["BeeCardComponent"]
+            _bee_nav_bee_nav_component__WEBPACK_IMPORTED_MODULE_8__["BeeNavComponent"],
+            _bee_footer_bee_footer_component__WEBPACK_IMPORTED_MODULE_9__["BeeFooterComponent"],
+            _bee_card_bee_card_component__WEBPACK_IMPORTED_MODULE_12__["BeeCardComponent"],
+            _bee_media_bee_media_component__WEBPACK_IMPORTED_MODULE_13__["BeeMediaComponent"]
         ],
         imports: [
             _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
-            ng_zorro_antd__WEBPACK_IMPORTED_MODULE_5__["NzDropDownModule"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_6__["RouterModule"]
+            videogular2_compiled_src_overlay_play_overlay_play__WEBPACK_IMPORTED_MODULE_3__["VgOverlayPlayModule"],
+            videogular2_compiled_src_core_core__WEBPACK_IMPORTED_MODULE_4__["VgCoreModule"],
+            videogular2_compiled_src_controls_controls__WEBPACK_IMPORTED_MODULE_5__["VgControlsModule"],
+            videogular2_compiled_src_buffering_buffering__WEBPACK_IMPORTED_MODULE_6__["VgBufferingModule"],
+            videogular2_compiled_src_streaming_streaming__WEBPACK_IMPORTED_MODULE_7__["VgStreamingModule"],
+            ng_zorro_antd__WEBPACK_IMPORTED_MODULE_10__["NzDropDownModule"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_11__["RouterModule"]
         ],
         exports: [
-            _bee_nav_bee_nav_component__WEBPACK_IMPORTED_MODULE_3__["BeeNavComponent"],
-            _bee_footer_bee_footer_component__WEBPACK_IMPORTED_MODULE_4__["BeeFooterComponent"],
-            _bee_card_bee_card_component__WEBPACK_IMPORTED_MODULE_7__["BeeCardComponent"]
+            _bee_nav_bee_nav_component__WEBPACK_IMPORTED_MODULE_8__["BeeNavComponent"],
+            _bee_footer_bee_footer_component__WEBPACK_IMPORTED_MODULE_9__["BeeFooterComponent"],
+            _bee_card_bee_card_component__WEBPACK_IMPORTED_MODULE_12__["BeeCardComponent"],
+            _bee_media_bee_media_component__WEBPACK_IMPORTED_MODULE_13__["BeeMediaComponent"]
         ]
     })
 ], ComponentModule);
@@ -1292,6 +1478,120 @@ UtilsService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         providedIn: 'root'
     })
 ], UtilsService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/video/video.component.scss":
+/*!********************************************!*\
+  !*** ./src/app/video/video.component.scss ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".bee-list {\n  width: 100%;\n  height: calc(100vh - var(--bee-header-height));\n  margin-top: var(--bee-header-height);\n  overflow-y: auto;\n  overflow-x: hidden;\n}\n.bee-list-logo {\n  width: 100%;\n  height: -webkit-max-content;\n  height: -moz-max-content;\n  height: max-content;\n  overflow: hidden;\n}\n.bee-list-logo img {\n  display: flex;\n  width: 100%;\n  overflow: hidden;\n}\n.bee-list-content {\n  flex: 1;\n  width: var(--bee-body-width);\n  margin: var(--bee-margin) auto;\n  padding: calc(var(--bee-padding) / 2);\n  overflow: hidden;\n  background-color: white;\n}\n.bee-list-content .content {\n  display: flex;\n  flex-wrap: wrap;\n  overflow: hidden;\n}\n.bee-list-content .content .list-item {\n  flex-basis: calc(25% - 16px);\n  margin: 8px;\n}\n.bee-list-content .list-page {\n  display: flex;\n  justify-content: center;\n  padding: calc(var(--bee-padding) / 2);\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdmlkZW8vRDpcXHByb2plY3RcXG15IHByb2plY3RcXGFuZ3VsYXIgcGMgcHJvamVjdFxcbXVzZXVtL3NyY1xcYXBwXFx2aWRlb1xcdmlkZW8uY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL3ZpZGVvL3ZpZGVvLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUVBO0VBQ0ksV0FBQTtFQUNBLDhDQUFBO0VBQ0Esb0NBQUE7RUFDQSxnQkFBQTtFQUNBLGtCQUFBO0FDREo7QURHSTtFQUNJLFdBQUE7RUFDQSwyQkFBQTtFQUFBLHdCQUFBO0VBQUEsbUJBQUE7RUFDQSxnQkFBQTtBQ0RSO0FER1E7RUFDSSxhQUFBO0VBQ0EsV0FBQTtFQUNBLGdCQUFBO0FDRFo7QURLSTtFQUNJLE9BQUE7RUFDQSw0QkFBQTtFQUNBLDhCQUFBO0VBQ0EscUNBekJFO0VBMEJGLGdCQUFBO0VBQ0EsdUJBQUE7QUNIUjtBREtRO0VBQ0ksYUFBQTtFQUNBLGVBQUE7RUFDQSxnQkFBQTtBQ0haO0FES1k7RUFDSSw0QkFBQTtFQUNBLFdBQUE7QUNIaEI7QURPUTtFQUNJLGFBQUE7RUFDQSx1QkFBQTtFQUNBLHFDQUFBO0FDTFoiLCJmaWxlIjoic3JjL2FwcC92aWRlby92aWRlby5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIiRwYWRkaW5nOiBjYWxjKHZhcigtLWJlZS1wYWRkaW5nKSAvIDIpO1xyXG5cclxuLmJlZS1saXN0IHtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgaGVpZ2h0OiBjYWxjKDEwMHZoIC0gdmFyKC0tYmVlLWhlYWRlci1oZWlnaHQpKTtcclxuICAgIG1hcmdpbi10b3A6IHZhcigtLWJlZS1oZWFkZXItaGVpZ2h0KTtcclxuICAgIG92ZXJmbG93LXk6IGF1dG87XHJcbiAgICBvdmVyZmxvdy14OiBoaWRkZW47XHJcblxyXG4gICAgJi1sb2dvIHtcclxuICAgICAgICB3aWR0aDogMTAwJTtcclxuICAgICAgICBoZWlnaHQ6IG1heC1jb250ZW50O1xyXG4gICAgICAgIG92ZXJmbG93OiBoaWRkZW47XHJcblxyXG4gICAgICAgIGltZyB7XHJcbiAgICAgICAgICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICAgICAgICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgICAgICAgICBvdmVyZmxvdzogaGlkZGVuO1xyXG4gICAgICAgIH1cclxuICAgIH1cclxuXHJcbiAgICAmLWNvbnRlbnQge1xyXG4gICAgICAgIGZsZXg6IDE7XHJcbiAgICAgICAgd2lkdGg6IHZhcigtLWJlZS1ib2R5LXdpZHRoKTtcclxuICAgICAgICBtYXJnaW46IHZhcigtLWJlZS1tYXJnaW4pIGF1dG87XHJcbiAgICAgICAgcGFkZGluZzogJHBhZGRpbmc7XHJcbiAgICAgICAgb3ZlcmZsb3c6IGhpZGRlbjtcclxuICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcclxuXHJcbiAgICAgICAgLmNvbnRlbnQge1xyXG4gICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgICAgICBmbGV4LXdyYXA6IHdyYXA7XHJcbiAgICAgICAgICAgIG92ZXJmbG93OiBoaWRkZW47XHJcblxyXG4gICAgICAgICAgICAubGlzdC1pdGVtIHtcclxuICAgICAgICAgICAgICAgIGZsZXgtYmFzaXM6IGNhbGMoMjUlIC0gMTZweCk7XHJcbiAgICAgICAgICAgICAgICBtYXJnaW46IDhweDtcclxuICAgICAgICAgICAgfVxyXG4gICAgICAgIH1cclxuXHJcbiAgICAgICAgLmxpc3QtcGFnZSB7XHJcbiAgICAgICAgICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICAgICAgICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gICAgICAgICAgICBwYWRkaW5nOiBjYWxjKHZhcigtLWJlZS1wYWRkaW5nKSAvIDIpO1xyXG4gICAgICAgIH1cclxuICAgIH1cclxufVxyXG4iLCIuYmVlLWxpc3Qge1xuICB3aWR0aDogMTAwJTtcbiAgaGVpZ2h0OiBjYWxjKDEwMHZoIC0gdmFyKC0tYmVlLWhlYWRlci1oZWlnaHQpKTtcbiAgbWFyZ2luLXRvcDogdmFyKC0tYmVlLWhlYWRlci1oZWlnaHQpO1xuICBvdmVyZmxvdy15OiBhdXRvO1xuICBvdmVyZmxvdy14OiBoaWRkZW47XG59XG4uYmVlLWxpc3QtbG9nbyB7XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IG1heC1jb250ZW50O1xuICBvdmVyZmxvdzogaGlkZGVuO1xufVxuLmJlZS1saXN0LWxvZ28gaW1nIHtcbiAgZGlzcGxheTogZmxleDtcbiAgd2lkdGg6IDEwMCU7XG4gIG92ZXJmbG93OiBoaWRkZW47XG59XG4uYmVlLWxpc3QtY29udGVudCB7XG4gIGZsZXg6IDE7XG4gIHdpZHRoOiB2YXIoLS1iZWUtYm9keS13aWR0aCk7XG4gIG1hcmdpbjogdmFyKC0tYmVlLW1hcmdpbikgYXV0bztcbiAgcGFkZGluZzogY2FsYyh2YXIoLS1iZWUtcGFkZGluZykgLyAyKTtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XG59XG4uYmVlLWxpc3QtY29udGVudCAuY29udGVudCB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsZXgtd3JhcDogd3JhcDtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbn1cbi5iZWUtbGlzdC1jb250ZW50IC5jb250ZW50IC5saXN0LWl0ZW0ge1xuICBmbGV4LWJhc2lzOiBjYWxjKDI1JSAtIDE2cHgpO1xuICBtYXJnaW46IDhweDtcbn1cbi5iZWUtbGlzdC1jb250ZW50IC5saXN0LXBhZ2Uge1xuICBkaXNwbGF5OiBmbGV4O1xuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgcGFkZGluZzogY2FsYyh2YXIoLS1iZWUtcGFkZGluZykgLyAyKTtcbn0iXX0= */"
+
+/***/ }),
+
+/***/ "./src/app/video/video.component.ts":
+/*!******************************************!*\
+  !*** ./src/app/video/video.component.ts ***!
+  \******************************************/
+/*! exports provided: VideoComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VideoComponent", function() { return VideoComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../config */ "./src/app/config/index.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _service_http_http_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../service/http/http.service */ "./src/app/service/http/http.service.ts");
+
+
+
+
+
+let VideoComponent = class VideoComponent {
+    constructor(router, http, route) {
+        this.router = router;
+        this.http = http;
+        this.route = route;
+        this.host = _config__WEBPACK_IMPORTED_MODULE_2__["default"].host;
+        this.page = 1;
+        this.limit = 10;
+        this.total = 0;
+        this.loading = true;
+        this.data = [];
+        this.parentLoading = false;
+        this.type = '';
+        this.detail = '';
+        this.playSelect = '0';
+        this.route.queryParams.subscribe(res => {
+            this.condition = res.id;
+            this.pid = res.pid;
+            this.type = res.type;
+            this.detail = res.detail;
+            this.parentLoading = false;
+            this.getParent(res.pid);
+            this.getData();
+        });
+    }
+    ngOnInit() {
+    }
+    getParent(event) {
+        const param = {
+            url: `api.php/cms/sort/scode/${event}`
+        };
+        this.http.get(param).subscribe(res => {
+            if (res.code === 1) {
+                this.parentData = res.data;
+                this.parentLoading = true;
+            }
+        });
+    }
+    getData() {
+        this.data = [];
+        const param = {
+            url: `api.php/list/${this.condition}/page/${this.page}/num/${this.limit}`,
+            data: {}
+        };
+        this.http.get(param).subscribe(res => {
+            if (res.code === 1) {
+                this.data = res.data;
+                this.total = res.rowtotal;
+            }
+            this.loading = false;
+        });
+    }
+    pageChange(event) {
+        this.page = event;
+        this.loading = true;
+        this.getData();
+    }
+    limitChange(event) {
+        this.limit = event;
+        this.loading = true;
+        this.getData();
+    }
+    itemClikc(event) {
+        this.playSelect = event.id;
+    }
+};
+VideoComponent.ctorParameters = () => [
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] },
+    { type: _service_http_http_service__WEBPACK_IMPORTED_MODULE_4__["HttpService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"] }
+];
+VideoComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-video',
+        template: __webpack_require__(/*! raw-loader!./video.component.html */ "./node_modules/raw-loader/index.js!./src/app/video/video.component.html"),
+        styles: [__webpack_require__(/*! ./video.component.scss */ "./src/app/video/video.component.scss")]
+    })
+], VideoComponent);
 
 
 
